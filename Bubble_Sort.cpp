@@ -37,6 +37,6 @@ int main()
 {
     int arr[] = {9,8,7,6,5,2,87};
     printarray(arr,7);
-    bubblesort(arr,7);
+    bubblesort(arr,7); //arrays by default are passed by address
     printarray(arr,7);
 }
