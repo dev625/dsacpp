@@ -21,10 +21,10 @@ void iterativepreorder(Node* root)
     A.push(temp);
     while(!A.empty())
     {
-        Node* foo = A.top();
+        Node* foo = A.top(); //preorder output is node->left->right
         A.pop();
-        cout << foo->data << " ";
-        if(foo->right)
+        cout << foo->data << " "; //first printing the node data
+        if(foo->right)            //pushing the right subtree first into stack so it is evaluated later
             A.push(foo->right);
         if(foo->left)
             A.push(foo->left);
