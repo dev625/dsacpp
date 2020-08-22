@@ -5,7 +5,7 @@ class Node
 {
 public:
     int data;
-    Node*left, *right;
+    Node *left, *right;
     Node(int data)
     {
         this->data = data;
@@ -13,67 +13,67 @@ public:
     }
 };
 
-Node* Minimum(Node* root)
+Node *Minimum(Node *root)
 {
     if (root->left)
         return Minimum(root->left);
     return root;
 }
 
-Node* Search(Node*root, int key)
+Node *Search(Node *root, int key)
 {
-    if (root==nullptr||root->data==key)
+    if (root == nullptr || root->data == key)
         return root;
-    if (key<root->data)
+    if (key < root->data)
         return Search(root->left, key);
     return Search(root->right, key);
 }
 
-void Inorder(Node* node)
+void Inorder(Node *node)
 {
-    if (node==nullptr)
+    if (node == nullptr)
         return;
     Inorder(node->left);
-    cout << node->data <<" ";
+    cout << node->data << " ";
     Inorder(node->right);
 }
 
-void Insert(Node* root, int key)
+void Insert(Node *root, int key)
 {
-    Node* temp = root;
-    Node* y = nullptr;
+    Node *temp = root;
+    Node *y = nullptr;
 
     /*This while loop below searches for an empty place to Insert the new Node.*/
-    while (temp!=nullptr)
+    while (temp != nullptr)
     {
-        y = temp;
-        if (key<temp->data)
-            temp =temp->left;
+        y = temp; //y becomes the parent node of the new node we are supposed to insert
+        if (key < temp->data)
+            temp = temp->left;
         else
             temp = temp->right;
     }
 
-    if (y==nullptr)                      //Tree is empty initially
+    if (y == nullptr) //Tree is empty initially
         root = new Node(key);
-    else if (key<y->data)                //Insert in the left subtree
+    else if (key < y->data) //Insert in the left subtree
         y->left = new Node(key);
-    else                                 //Insert in the right subtree
+    else //Insert in the right subtree
         y->right = new Node(key);
 }
 
-Node* Delete(Node* root, int key)
+Node *Delete(Node *root, int key)
 {
-    if (root==nullptr)
+    if (root == nullptr)
         return root;
     else if (key < root->data)
         root->left = Delete(root->left, key);
-    else if (key>root->data)
+    else if (key > root->data)
         root->right = Delete(root->right, key);
     //The node with the particular key is found at this point.
     else
     {
         // Case 1 : No Child
-        if (root->left==nullptr&&root->right==nullptr)
+        if (root->left == nullptr && root->right == nullptr)
         {
             delete root;
             root = nullptr;
@@ -81,29 +81,26 @@ Node* Delete(Node* root, int key)
         // Case 2 : Single Child
         else if (root->left == nullptr)
         {
-            Node* temp = root;
+            Node *temp = root;
             root = root->right;
             delete temp;
         }
         else if (root->right == nullptr)
         {
-            Node* temp = root;
+            Node *temp = root;
             root = root->left;
             delete temp;
         }
         // Case 3 : 2 Children
         else
         {
-            Node* temp = Minimum(root->right);
+            Node *temp = Minimum(root->right);
             root->data = temp->data;
             root->right = Delete(root->right, temp->data);
         }
     }
     return root;
 }
-
-
-
 
 int main()
 {
@@ -125,5 +122,5 @@ int main()
     cout << "\n";
     root = Delete(root, 17);
     Inorder(root);
-    cout <<"\n";
+    cout << "\n";
 }
