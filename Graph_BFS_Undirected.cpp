@@ -9,7 +9,7 @@ using namespace std;
 class Graph
 {
     int v;          // Number of Vertices in the Graph
-    list<int> *adj; //Pointer to an array of lists
+    list<int> *adj; // Pointer to an array of lists
 public:
     Graph(int v);               //Graph Constructor
     void addEdge(int x, int y); //Function to add an edge to the graph
