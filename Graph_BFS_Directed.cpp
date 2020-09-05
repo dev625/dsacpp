@@ -71,15 +71,14 @@ void Graph::BFS(int s)
 
 int main()
 {
-    Graph g(4);
-    g.addEdge(0, 1);
-    g.addEdge(0, 2);
+    Graph g(7);
     g.addEdge(1, 2);
-    g.addEdge(2, 0);
     g.addEdge(2, 3);
-    g.addEdge(3, 3);
+    g.addEdge(3, 5);
+    g.addEdge(3, 6);
+    g.addEdge(4, 3);
 
-    g.BFS(2);
+    g.BFS(1);
     cout << "\n";
-    g.BFS(3);
+    g.BFS(4);
 }
