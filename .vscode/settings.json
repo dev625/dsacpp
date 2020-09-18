@@ -60,6 +60,19 @@
         "typeindex": "cpp",
         "valarray": "cpp",
         "variant": "cpp",
-        "cstdio": "c"
+        "cstdio": "c",
+        "cctype": "cpp",
+        "cfenv": "cpp",
+        "cinttypes": "cpp",
+        "clocale": "cpp",
+        "csetjmp": "cpp",
+        "csignal": "cpp",
+        "cstdarg": "cpp",
+        "cstdint": "cpp",
+        "ctime": "cpp",
+        "cwctype": "cpp",
+        "initializer_list": "cpp",
+        "new": "cpp",
+        "typeinfo": "cpp"
     }
 }

@@ -1,0 +1,3 @@
+/*Given a text string txt and a pattern string patt we 
+are supposed to find all the occurrences of the pattern 
+string patt in the text string txt.*/
