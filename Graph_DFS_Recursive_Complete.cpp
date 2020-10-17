@@ -46,12 +46,11 @@ void Graph::DFSUtil(int v, bool visited[])
 
     /*Recur for all the vertices adjacent 
     to this vertex.*/
-    list<int>::iterator i;
-    for (i = adj[v].begin(); i != adj[v].end(); i++)
+    for (auto i : adj[v])
     {
-        if (!visited[*i])
+        if (visited[i] == false)
         {
-            DFSUtil(*i, visited);
+            DFSUtil(i, visited);
         }
     }
 }

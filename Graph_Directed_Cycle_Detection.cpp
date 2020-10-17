@@ -1,7 +1,11 @@
 /*In the recursion tree if there is an 
 edge from a descendant to an ancestor and that ancestor
 is currently active in recursion then we say that there
-is a cycle*/
+is a cycle.
+
+Property : A directed graph has a cycle if and only if
+its DFS traversal reveals a back-edge.
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
