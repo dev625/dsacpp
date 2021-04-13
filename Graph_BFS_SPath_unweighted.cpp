@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-//presumably works for both directed and undirected graphs , CONFIRM LATER!!!
 
 void BFS(vector<int> adj[], int v, int s)
 {
