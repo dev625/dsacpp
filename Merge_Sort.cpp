@@ -16,7 +16,6 @@ void Merge(vector<int> &arr, int l, int m, int r)
     i = 0; //initial index of first subarray
     j = 0; //initial index of second subarray
     k = l; //initial index of merged subarray
-
     while (i < n1 && j < n2)
     {
         if (L[i] <= R[j])
@@ -44,7 +43,6 @@ void MergeSort(vector<int> &arr, int l, int r)
           If the array size is odd then the left half is the
           larger half and m is the last index of the
           first half of the array .*/
-
         MergeSort(arr, l, m);     //Recursively Sort First Half
         MergeSort(arr, m + 1, r); //Recursively Sort Second Half
         Merge(arr, l, m, r);      //Merge The Two Halves

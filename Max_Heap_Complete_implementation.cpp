@@ -108,7 +108,7 @@ public:
     void DeleteKey(int i)
     {
         /*Concept : To delete a key at a particular index,
-        we Increase the key of */
+        we Increase that particular key to infinity and then extract it.*/
         IncreaseKey(i, INT_MAX);
         ExtractMaximum();
     }
