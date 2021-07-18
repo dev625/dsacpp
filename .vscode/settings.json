@@ -13,6 +13,9 @@
         "ostream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "vector": "cpp",
+        "cassert": "cpp",
+        "stack": "cpp"
     }
 }

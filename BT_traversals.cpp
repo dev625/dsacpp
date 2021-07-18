@@ -14,7 +14,7 @@ class Node
         }
 };
 
-void rec_inorder(Node* node) //left --> node --> right
+void rec_inorder(Node* node) //left --> node --> right\
 {
     if(node == nullptr)
         return;

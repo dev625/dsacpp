@@ -1,26 +1,20 @@
 /*Program to print BFS Traversal of an Undirected
 graph from some source vertex s*/
-
-#include <iostream>
-#include <list>
-
+#include <bits/stdc++.h>
 using namespace std;
-
 class Graph
 {
     int v;          // Number of Vertices in the Graph
     list<int> *adj; // Pointer to an array of lists
 public:
-    Graph(int v);               //Graph Constructor
+    Graph(int v)
+    {
+        this->v = v;
+        adj = new list<int>[v];
+    }
     void addEdge(int x, int y); //Function to add an edge to the graph
     void BFS(int s);            //BFS Traversal of the Graph
 };
-
-Graph::Graph(int v)
-{
-    this->v = v;
-    adj = new list<int>[v];
-}
 
 void Graph::addEdge(int x, int y)
 {
@@ -31,19 +25,14 @@ void Graph::addEdge(int x, int y)
 void Graph::BFS(int s)
 {
     //  Initially marking all the vertices as not visited
-    bool *visited = new bool[v];
-    for (int i = 0; i < v; i++)
-        visited[i] = false;
+    vector<bool> visited(v, false);
     //  Creating a queue for Breadth First Search
     list<int> queue;
-
     // We mark the current node as visited and enqueue it
     visited[s] = true;
     queue.push_back(s);
-
     // Iterator i will be used to get all adjacent vertices of a vertex
     list<int>::iterator i;
-
     while (!queue.empty())
     {
         //Dequeue a node from the node and print it

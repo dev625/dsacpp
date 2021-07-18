@@ -1,36 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-void printarr(int arr[],int n)
+void backtrack(int curr, vector<int> &a, vector<vector<int>> &ans)
 {
-    for(int i=0;i<n;i++)
+    if (curr == a.size())
     {
-        cout << arr[i] << " ";
-    }
-    cout << "\n";
-}
-void hp(int a[],int size,int n)
-{
-    if(size==1)
-    {
-        printarr(a,n);
+        ans.push_back(a);
         return;
     }
-    for(int i=0;i<size;i++)
+    for (int i = curr; i < a.size(); i++)
     {
-        hp(a,size-1,n);
-        if(size%2==1)
-            swap(a[0],a[size-1]);
-        else 
-            swap(a[i],a[size-1]);
+        swap(a[i], a[curr]);
+        backtrack(curr + 1, a, ans);
+        swap(a[i], a[curr]);
     }
+}
+
+vector<vector<int>> all_permutations(vector<int> &a)
+{
+    vector<vector<int>> ans;
+    backtrack(0, a, ans);
+    return ans;
 }
 
 int main()
 {
-    int a[] = {1,2,3};
-    int n = sizeof(a)/sizeof(a[0]);
-    hp(a,n,n);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (auto &x : a)
+        cin >> x;
+    vector<vector<int>> ans = all_permutations(a);
+    for (auto &x : ans)
+    {
+        for (auto &y : x)
+        {
+            cout << y << " ";
+        }
+        cout << "\n";
+    }
 }
