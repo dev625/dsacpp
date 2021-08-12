@@ -16,7 +16,15 @@ constexpr long long int MOD = 1e9 + 7;
 #define vi vector<int>
 #define vll vector<long long int>
 #define pii pair<int, int>
-
+void print(const vector<vector<int>> dp)
+{
+    for (auto &x : dp)
+    {
+        for (auto &y : x)
+            cout << y << " ";
+        cout << "\n";
+    }
+}
 void solve()
 {
     string s1, s2;
@@ -48,6 +56,7 @@ void solve()
         else
             j--;
     }
+    print(dp);
     reverse(ans.begin(), ans.end());
     cout << ans;
 }

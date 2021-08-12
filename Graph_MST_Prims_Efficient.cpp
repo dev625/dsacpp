@@ -13,6 +13,8 @@ void MST(vector<vector<int>> adj[], int v)
     {
         int minkey = pq.top().second;
         pq.pop();
+        if (mst[minkey] == true)
+            continue;
         mst[minkey] = true;
         for (auto &x : adj[minkey])
         {

@@ -27,9 +27,12 @@ int main()
     cout << "Enter the array elements in sorted order :\n";
     for (auto &x : a)
         cin >> x;
-    int ele;
-    cout << "Enter the element you want to search for :\n";
-    cin >> ele;
-    int idx = binsearch(a, ele);
-    cout << "The position/to be position of ele is " << binsearch(a, ele);
+    while (1)
+    {
+        int ele;
+        cout << "Enter the element you want to search for :\n";
+        cin >> ele;
+        int idx = binsearch(a, ele);
+        cout << "The position/to be position of ele is " << binsearch(a, ele);
+    }
 }

@@ -16,6 +16,9 @@
         "new": "cpp",
         "vector": "cpp",
         "cassert": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "numeric": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp"
     }
 }

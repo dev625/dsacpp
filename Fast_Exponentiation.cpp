@@ -5,7 +5,7 @@ int power_recursive(int a, int b)
 {
     if (b == 0)
         return 1;
-    int tmp = power(a, b / 2);
+    int tmp = power_recursive(a, b / 2);
     int result = tmp * tmp;
     if (b % 2 == 1)
         result *= a;

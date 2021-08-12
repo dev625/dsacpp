@@ -1,6 +1,15 @@
 #include <iostream>
 using namespace std;
+/*
+All primes greater than 3 are of the form 
+6k±1, where k>0.
+all integers are of the form 6k+i
+where i=-1,0,1,2,3 or 4.
+2 divides 6k+0,6k+2,6k+4
+3 divides 6k+3
 
+
+*/
 bool isPrime(int k)
 {
     if (k <= 1)
