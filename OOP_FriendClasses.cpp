@@ -4,7 +4,6 @@ using namespace std;
 making an entire class a friend of another class
 gives all of the members of the friend class 
 access to the private members of the other class.
-
 */
 class Storage
 {

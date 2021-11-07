@@ -38,7 +38,6 @@ void Matrix::operator()()
         }
     }
 }
-#include <iostream>
 
 int main()
 {
